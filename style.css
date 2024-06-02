@@ -1,0 +1,335 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Danfo&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.container {
+  background-color: black;
+  color: white;
+}
+/* header area */
+.navbar {
+  background-color: #000;
+  height: 60px;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.navbar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  padding: 0 50px;
+}
+.logo {
+  color: transparent;
+  background: linear-gradient(to bottom, white, red);
+  background-clip: text;
+  font-family: "Danfo", serif;
+  margin-left: 10px;
+  white-space: nowrap;
+}
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+.logo-wrapper img {
+  width: 40px;
+}
+.menu-list {
+  display: flex;
+  list-style: none;
+  column-gap: 30px;
+  padding: 0;
+}
+.menu-list-item {
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 1px solid transparent;
+}
+.profil-text-container {
+  cursor: pointer;
+}
+.menu-list-item:hover {
+  color: red;
+  font-weight: 500;
+  border-bottom: 2px solid red;
+}
+.profil-text:hover {
+  color: red;
+  font-weight: bold;
+}
+.menu-list-item.active {
+  font-weight: bold;
+}
+.profil-container {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+.profil-container img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.toggle {
+  background-color: white;
+  border-radius: 30px;
+  width: 40px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+.bi-moon-fill,
+.bi-sun-fill {
+  color: goldenrod;
+  font-size: 14px;
+}
+.toggle-ball {
+  background-color: black;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  position: absolute;
+  right: 1px;
+  transition: 0.3s all ease;
+}
+.profil-text-container {
+  white-space: nowrap;
+}
+/* sidebar area */
+.sidebar {
+  background-color: #000;
+  color: #fff;
+  height: 100%;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+  row-gap: 40px;
+  position: fixed;
+  top: 0;
+}
+.sidebar i {
+  color: #fff;
+  cursor: pointer;
+  font-size: 24px;
+}
+.sidebar i:hover {
+  color: red;
+}
+/* featured content area */
+.content-wrapper {
+  margin-left: 50px;
+}
+.featured-content {
+  background: url(img/Deadpool.jpg);
+  padding: 50px;
+  height: calc(100vh - 60px);
+  background-size: 100% 100%;
+}
+.featured-title {
+  width: 400px;
+}
+.featured-desc {
+  width: 600px;
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  margin: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: black;
+}
+.featured-buttons {
+  display: flex;
+  gap: 15px;
+  margin: 0 20px;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  padding: 10px 25px;
+  height: 40px;
+  width: 110px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  transform: scale(1.1);
+  background-color: #d1d1d1;
+}
+.btn-secondary {
+  background-color: rgba(156, 154, 154, 0.5);
+  color: white;
+  padding: 10px 25px;
+  height: 40px;
+  width: 180px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn-secondary:hover {
+  transform: scale(1.1);
+  background-color: rgba(110, 110, 110, 0.7);
+}
+/* filter area */
+.movie-list-filter {
+  margin: 20px 0 20px 50px;
+  padding: 20px;
+}
+.movie-list-filter select {
+  background-color: black;
+  color: white;
+  padding: 7px 0;
+  width: 125px;
+}
+/* movie list area */
+.movie-list-container {
+  margin-left: 70px;
+}
+.movie-list {
+  list-style: none;
+  padding: 0;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+  transform: translateX(0);
+  transition: all 1s ease-in-out;
+}
+.movie-list-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+.movie-item {
+  position: relative;
+}
+.movie-item:hover .movie-item-title,
+.movie-item:hover .movie-item-icons {
+  opacity: 1;
+}
+.movie-item:hover .movie-item-img {
+  transform: scale(1.2);
+  margin: 0 30px;
+  object-position: 0.5;
+}
+.movie-item-img {
+  width: 270px;
+  height: 200px;
+  object-fit: cover;
+  transition: all 0.5s ease-out;
+}
+
+.movie-item-title {
+  background-color: rgba(40, 40, 40, 0.4);
+  padding: 0 10px;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10%;
+  left: 50px;
+  opacity: 0;
+  transition: all 1s ease-out;
+}
+.movie-item-icons {
+  background-color: rgba(40, 40, 40, 0.4);
+  padding: 10px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 10%;
+  left: 50px;
+  display: flex;
+  column-gap: 20px;
+  opacity: 0;
+  transition: all 1s ease-in;
+}
+.movie-item-icons i {
+  cursor: pointer;
+  opacity: 0.5;
+  font-size: 20px;
+  transition: all 0.5s linear;
+}
+.movie-item-icons i:hover {
+  opacity: 1;
+}
+.arrow {
+  width: 100px;
+  display: flex;
+  font-size: 120px;
+  position: absolute;
+  right: 0;
+  top: 100px;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all 0.5s ease-in;
+}
+.arrow:hover {
+  opacity: 1;
+}
+/* light mode area*/
+.container.active {
+  background-color: white;
+}
+.navbar.active {
+  background-color: white;
+  color: black;
+}
+.sidebar.active {
+  background-color: white;
+}
+.sidebar i.active {
+  color: black;
+}
+.movie-list-title.active {
+  color: black;
+}
+.toggle.active {
+  background-color: black;
+}
+.toggle-ball.active {
+  background-color: white;
+  transform: translateX(-20px);
+}
+.movie-list-filter select.active {
+  background-color: white;
+  color: black;
+}
+/* responsive */
+@media only screen and (max-width: 960px){
+  .menu-container{
+    display: none;
+  }
+  .featured-content{
+    height: 50vh;
+  }
+  .featured-title{
+    width: 200px;
+  }
+  .featured-desc{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    max-width: 200px;
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 500px){
+  .logo{
+    display: none;
+  }
+}
